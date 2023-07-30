@@ -39,6 +39,7 @@ def main(args):
         args.context_overlap = args.context_length // 2
 
     time_str = datetime.datetime.now().strftime("%Y-%m-%dT%H-%M-%S")
+    time_str = "outputs"
     if args.cloudsave:
         savedir = f"/content/drive/MyDrive/AnimateDiff/outputs/{time_str}"
     else:

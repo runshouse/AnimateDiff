@@ -53,7 +53,7 @@ def main(args):
     config = OmegaConf.load(args.config)
     samples = []
 
-    sample_idx = scene_number
+    sample_idx = args.scene_number
 
     print('Made it to line 54')
     for model_idx, (config_key, model_config) in enumerate(list(config.items())):

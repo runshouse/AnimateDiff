@@ -53,7 +53,7 @@ def main(args):
     config = OmegaConf.load(args.config)
     samples = []
 
-    sample_idx = 0
+    sample_idx = scene_number
 
     print('Made it to line 54')
     for model_idx, (config_key, model_config) in enumerate(list(config.items())):
@@ -190,7 +190,7 @@ if __name__ == "__main__":
                         help="max stride of motion is 2^context_stride")
     parser.add_argument("--context_overlap", type=int, default=-1,
                         help="overlap between chunks of context (-1 for half of context length)")
-
+    parser.add_argument("--scene_number", type=int, default=0, help="Starting scene number")
     parser.add_argument("--L", type=int, default=16 )
     parser.add_argument("--W", type=int, default=512)
     parser.add_argument("--H", type=int, default=512)

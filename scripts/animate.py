@@ -44,7 +44,10 @@ def main(args):
         savedir = f"/content/drive/MyDrive/AnimateDiff/outputs/{time_str}"
     else:
         savedir = f"samples/{time_str}"
-    os.makedirs(savedir)
+    # os.makedirs(savedir)
+    if not os.path.exists(savedir):
+        # If it doesn't exist, create the directory
+        os.makedirs(savedir)
     inference_config = OmegaConf.load(args.inference_config)
 
     config = OmegaConf.load(args.config)
